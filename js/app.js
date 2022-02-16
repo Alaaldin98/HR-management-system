@@ -1,5 +1,6 @@
 
-let allname = []
+let allname = [];
+
 
 function randomRange(myMin, myMax) {
     return Math.floor(Math.random() * (myMax - myMin + 1) + myMin);
@@ -52,3 +53,37 @@ OmarZaid.render();
 RanaSaleh.render();
 HadiAhmad.render();
 console.log(allname);
+
+var seq = (Math.floor(Math.random() * 10000) + 10000).toString().substring(1);
+console.log(seq);
+
+function handelSubmit(event){
+    event.preventDefault();
+    let fullname = event.target.fullname.value;
+    let ID = event.target.employee.value.split(",")
+
+    let imageurl = event.target.imageurl.value;
+
+    let level = event.target.level.value;
+    let Department = event.target.department.value;
+
+    
+    let newname = new names(employee,fullname,department,level,salary,imageurl);
+    newname.seq();
+    renderAll();
+    form.reset();
+}
+
+
+// function renderAll(){
+    
+//     namesDiv.innerHTML = " ";
+
+//     for (let i = 0; i < allname.length; i++) {
+//         allname[i].getPrice();
+//         allname[i].render();
+        
+//     }
+
+// };
+// renderAll();
