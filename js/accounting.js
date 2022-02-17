@@ -104,4 +104,77 @@
 //   }
 // }, false);
 
+let namdiv =document.getElementById("namdiv")
+let namediv =document.getElementById("tablediv")
 
+function names (employee,fullname,department,level,imageurl){
+    this.employee = employee;
+    this.fullname = fullname;
+    this.department = department;
+    this.level = level;
+    this.imageurl = `${imageurl}`;
+    this.salary = 0;
+    allname.push(this)
+} 
+
+function renderHeader(){
+    let tr = document.createElement("tr");
+    table.appendChild(tr);
+
+    let columnName = document.createElement('th');
+    columnName.textContent = "Name";
+    tr.appendChild(columnName);
+
+    let columnPrice = document.createElement('th');
+    columnPrice.textContent = "Price";
+    tr.appendChild(columnPrice);
+}
+
+
+names.prototype.renderTableBody = function(){
+    
+    let tr = document.createElement("tr");
+    table.appendChild(tr);
+
+    let nameCell = document.createElement("td");
+    nameCell.textContent= this.name;
+    tr.appendChild(nameCell);
+
+    let priceCell = document.createElement("td");
+    priceCell.textContent = this.price;
+    tr.appendChild(priceCell);
+};
+
+
+function renderBody(){
+    table.innerHTML = "";
+    renderHeader();
+    for(let i =0; i < allDrinks.length; i++){
+        allnames[i].renderTableBody();
+    }
+}
+document.write(`<h1>${this.employee}</h1>`)
+
+
+function savenams(){
+    let formatedData = JSON.stringify(allname);
+    localStorage.setItem("names", formatedData);
+}
+
+
+function getData(){
+    let nams = localStorage.getItem("names");
+    let parsnams = JSON.parse(names);
+    console.log(allname)
+    if(parseDrinks != null){
+            allnames = [];
+
+            for(let i = 0; i < parsnams.length; i++){
+                
+                new Drink(parsnams[i].employee, parsnams[i].fullname, parsnams[i].department, parseDrinks[i].level, parseDrinks[i].imageurl);
+            };
+      
+        }
+    console.log(allname);
+    renderAll();
+}
