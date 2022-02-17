@@ -103,6 +103,7 @@ function handelSubmit(event){
     form.reset();
 }
 
+
 // function renderAll(){
     
 //     namesDiv.innerHTML = " ";
