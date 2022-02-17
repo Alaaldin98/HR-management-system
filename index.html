@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./js/app.js"></script>
-    <script src="./js/Dom.js"></script>
+   
     
 </head>
 <body>
@@ -20,60 +19,75 @@
         </nav>
     </header>
     <main id="mains">
+        <!-- <button id="greeting">Greeting</button> -->
         <div></div>
 <h1>HR management system</h1>
 <!-- <button id="but">welcome </button> -->
-<form action="">
+<form id="form">
 
     <fieldset>
 <legend><h2>Personal Information</h2></legend>
 
-    
+
+
 <label for="name" id="namelabel">Full name: </label>
-<input type="text" name="name" id="name">
+<input type="text" name="name" id="fullname">
 <br>
-<form name="AddAndEdit">
     <label for="">Department: </label>
-    <select name="list" id="personlist">
-       <option value="11">Administration</option>
-       <option value="27">Marketing</option>
-       <option value="17">Development</option>
-       <option value="10">Finance</option>
+    <select name="list" id="department">
+       <option value="Administration">Administration</option>
+       <option value="Marketing">Marketing</option>
+       <option value="Development">Development</option>
+       <option value="Finance">Finance</option>
     </select>
- </form>
+ 
  <br>
 
- <form name="AddAndEdit">
+ 
     <label for="">Level: </label>
-    <select name="list" id="personlist">
-       <option value="11">Junior</option>
-       <option value="27">Mid-Senior</option>
-       <option value="17">Senior</option>
+    <select name="list" id="level">
+       <option value="Junior">Junior</option>
+       <option value="Mid-Senior">Mid-Senior</option>
+       <option value="Senior">Senior</option>
     </select>
- </form>
+ 
  <br>
  
 <label for="">Image URL: </label>
-<input type="url" name="Image" id="Image">
+<input type="url" name="Image" id="imageurl">
 <br>
 
-<input type="submit" name="name" id="name" value="Submit">
+<input type="submit" name="name" id="peri" value="Submit">
 
 <!-- <label for="">Name: </label>
 <input type="text" name="name" id="name"> -->
 
 <br>
 
-<input type="checkbox" name="name" id="name">
+<!-- <input type="checkbox" name="name" id="name">
 <label for="">Save my info </label>
-<br>
+<br> -->
 </fieldset>
 </form>
+
+<!-- <p>Click table head to sort.</p>
+ 
+<table>
+  <thead>
+    <tr>
+      <th class='prop__name' data-prop-name='firstName'>First Name</th>
+      <th class='prop__name' data-prop-name='lastName'>Last Name</th>
+      <th class='prop__name' data-prop-name='birth'>Birth</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table> -->
 
 
     </main>
 
-    
+    <script src="./js/app.js"></script>
+    <script src="./js/accounting.js"></script>
 
     <footer class="footer">
     
