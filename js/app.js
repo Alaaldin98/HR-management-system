@@ -134,6 +134,7 @@ function handelSubmit(event){
     form.reset();
 }
 
+
 function renderAll(){
     
     namesdiv.innerHTML = " ";
