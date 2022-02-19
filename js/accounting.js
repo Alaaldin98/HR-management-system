@@ -1,4 +1,4 @@
-// `use strict`;
+// let tables = document.getElementById("table");
 // localStorage.setItem("name", "alaa ");
 // localStorage.setItem(" age" ," 23");
 // let mname= localStorage.getItem("name");
@@ -28,10 +28,10 @@
 // for (let i = 0 ; i < allname.length ;i++ ) {
 //     allname [i].render;
 
-// }let table
+// }
 // function renderheader() {
 // let tr = document.createElement("tr");
-// table.appendC 
+// tables.appendChild(tr) 
 
 // }
 
@@ -103,5 +103,5 @@
 //     sortTable(data, t.dataset.propName, t.dataset.dir);
 //   }
 // }, false);
-
+// console.log("alaa");
 
