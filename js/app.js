@@ -114,7 +114,6 @@ names.prototype.salarylevel = function() {
             allname[i].render();
             console.log(allname[i].salary);
         }
-
 let form = document.getElementById("form");
 form.addEventListener("submit", handelSubmit);
 function handelSubmit(event){
