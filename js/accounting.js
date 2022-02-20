@@ -111,6 +111,21 @@
 // let namediv =document.getElementById("tablediv")
 // >>>>>>> main
 
+// function names (employee,fullname,department,level,imageurl){
+//     this.employee = employee;
+//     this.fullname = fullname;
+//     this.department = department;
+//     this.level = level;
+//     this.imageurl = `${imageurl}`;
+//     this.salary = 0;
+//     allname.push(this)
+// } 
+let allname = [];
+
+
+function randomRange(myMin, myMax) {
+    return Math.floor(Math.random() * (myMax - myMin + 1) + myMin);
+  }
 function names (employee,fullname,department,level,imageurl){
     this.employee = employee;
     this.fullname = fullname;
@@ -121,64 +136,204 @@ function names (employee,fullname,department,level,imageurl){
     allname.push(this)
 } 
 
-function renderHeader(){
-    let tr = document.createElement("tr");
-    table.appendChild(tr);
 
-    let columnName = document.createElement('th');
-    columnName.textContent = "Name";
-    tr.appendChild(columnName);
+let GhaziSamer = new names(1000,"Ghazi Samer","Administration","Senior",`Images/Ghazi.jpg`);
+let LanaAli = new names(1001,"Lana Ali","Finance","Senior",`Images/Lana.jpg`);
+let TamaraAyoub = new names(1002,"Tamara Ayoub","Marketing","Senior",`Images/Tamara.jpg`);
+let SafiWalid = new names(1003,"Safi Walid","Administration","Mid-Senior",`Images/Safi.jpg`);
+let OmarZaid = new names(1004,"Omar Zaid","Development","Senior",`Images/Omar.jpg`);
+let RanaSaleh = new names(1005,"Rana Saleh","Development","Junior",`Images/Rana.jpg`);
+let HadiAhmad = new names(1006,"Hadi Ahmad","Finance","Mid-Senior",`Images/Hadi.jpg`);
 
-    let columnPrice = document.createElement('th');
-    columnPrice.textContent = "Price";
-    tr.appendChild(columnPrice);
-}
-
-
-names.prototype.renderTableBody = function(){
+function renderAll(){
     
-    let tr = document.createElement("tr");
-    table.appendChild(tr);
+    namesdiv.innerHTML = " ";
 
-    let nameCell = document.createElement("td");
-    nameCell.textContent= this.name;
-    tr.appendChild(nameCell);
+    for (let i = 0; i < allname.length; i++) {
+        allname[i].salarylevel();
+        allname[i].render();
+        
+    }}
+// let tablediv = document.getElementById("tablediv"); 
 
-    let priceCell = document.createElement("td");
-    priceCell.textContent = this.price;
-    tr.appendChild(priceCell);
-};
+// function renderHeader(){
+//     let tr = document.createElement("tr");
+//     tablediv.appendChild(tr);
+
+//     let columnName = document.createElement('th');
+//     columnName.textContent = "Name";
+//     tr.appendChild(columnName);
+
+//     let columnPrice = document.createElement('th');
+//     columnPrice.textContent = "Price";
+//     tr.appendChild(columnPrice);
+// }
+// renderHeader();
+// // let names;
+// // names.prototype.renderTableBody = function(){
+//  names.prototype.renderTableBody=function(){   
+
+//     let tr = document.createElement("tr");
+//     tablediv.appendChild(tr);
+
+//     let nameCell = document.createElement("td");
+//     nameCell.textContent= this.names;
+//     tr.appendChild(nameCell);
+
+//     let priceCell = document.createElement("td");
+//     priceCell.textContent = this.names;
+//     tr.appendChild(priceCell);
+// };
 
 
-function renderBody(){
-    table.innerHTML = "";
-    renderHeader();
-    for(let i =0; i < allDrinks.length; i++){
-        allnames[i].renderTableBody();
-    }
-}
-document.write(`<h1>${this.employee}</h1>`)
+// function renderBody(){
+//     tablediv.innerHTML = "";
+//     renderHeader();
+//     for(let i =0; i < allname.length; i++){
+//         allname[i].renderTableBody();
+//     }
+// }
+
+// document.write(`<h1>${this.employee}</h1>`)
 
 
-function savenams(){
-    let formatedData = JSON.stringify(allname);
-    localStorage.setItem("names", formatedData);
-}
+// function savenams(){
+//     let formatedData = JSON.stringify(allname);
+//     localStorage.setItem("names", formatedData);
+// }
 
 
-function getData(){
-    let nams = localStorage.getItem("names");
-    let parsnams = JSON.parse(names);
-    console.log(allname)
-    if(parseDrinks != null){
-            allnames = [];
+// function getData(){
+//     let nams = localStorage.getItem("names");
+//     let parsnams = JSON.parse(names);
+//     console.log(allname)
+//     if(parseDrinks != null){
+//             allnames = [];
 
-            for(let i = 0; i < parsnams.length; i++){
+//             for(let i = 0; i < parsnams.length; i++){
                 
-                new Drink(parsnams[i].employee, parsnams[i].fullname, parsnams[i].department, parseDrinks[i].level, parseDrinks[i].imageurl);
-            };
+//                 new Drink(parsnams[i].employee, parsnams[i].fullname, parsnams[i].department, parseDrinks[i].level, parseDrinks[i].imageurl);
+//             };
       
-        }
-    console.log(allname);
-    renderAll();
-}
+//         }
+//     console.log(allname);
+//     renderAll();
+
+let table = document.createElement('table');
+let thead = document.createElement('thead');
+let tbody = document.createElement('tbody');
+
+table.appendChild(thead);
+table.appendChild(tbody);
+
+// Adding the entire table to the body tag
+document.getElementById('tablediv').appendChild(table);
+
+let row_1 = document.createElement('tr');
+let heading_1 = document.createElement('th');
+heading_1.innerHTML = "Department";
+let heading_2 = document.createElement('th');
+heading_2.innerHTML = "# Of employees";
+let heading_3 = document.createElement('th');
+heading_3.innerHTML = "Total salary";
+let heading_4 = document.createElement('th');
+heading_4.innerHTML = "Average salary";
+
+row_1.appendChild(heading_1);
+row_1.appendChild(heading_2);
+row_1.appendChild(heading_3);
+row_1.appendChild(heading_4);
+
+thead.appendChild(row_1);
+
+
+// Creating and adding data to second row of the table
+let row_2 = document.createElement('tr');
+let row_2_data_1 = document.createElement('td');
+row_2_data_1.innerHTML = "Administration";
+let row_2_data_2 = document.createElement('td');
+row_2_data_2.innerHTML = "Marketing";
+let row_2_data_3 = document.createElement('td');
+row_2_data_3.innerHTML = "Development";
+let row_2_data_4 = document.createElement('td');
+row_2_data_4.innerHTML = "Finance";
+
+row_2.appendChild(row_2_data_1);
+row_2.appendChild(row_2_data_2);
+row_2.appendChild(row_2_data_3);
+row_2.appendChild(row_2_data_4);
+tbody.appendChild(row_2);
+
+
+// Creating and adding data to third row of the table
+let row_3 = document.createElement('tr');
+let row_3_data_1 = document.createElement('td');
+row_3_data_1.innerHTML = "Development";
+let row_3_data_2 = document.createElement('td');
+row_3_data_2.innerHTML = "Adam White";
+let row_3_data_3 = document.createElement('td');
+row_3_data_3.innerHTML = "Microsoft";
+let row_3_data_4 = document.createElement('td');
+row_3_data_4.innerHTML = "Microsoft";
+
+row_3.appendChild(row_3_data_1);
+row_3.appendChild(row_3_data_2);
+row_3.appendChild(row_3_data_3);
+row_3.appendChild(row_3_data_4);
+
+tbody.appendChild(row_3);
+
+
+let row_4 = document.createElement('tr');
+let row_4_data_1 = document.createElement('td');
+row_4_data_1.innerHTML = "Finance";
+let row_4_data_2 = document.createElement('td');
+row_4_data_2.innerHTML = "Adam White";
+let row_4_data_3 = document.createElement('td');
+row_4_data_3.innerHTML = "Microsoft";
+let row_4_data_4 = document.createElement('td');
+row_4_data_4.innerHTML = "Microsoft";
+
+row_4.appendChild(row_4_data_1);
+row_4.appendChild(row_4_data_2);
+row_4.appendChild(row_4_data_3);
+row_4.appendChild(row_4_data_4);
+
+tbody.appendChild(row_4);
+
+
+let row_5 = document.createElement('tr');
+let row_5_data_1 = document.createElement('td');
+row_5_data_1.innerHTML = "Marketing";
+let row_5_data_2 = document.createElement('td');
+row_5_data_2.innerHTML = "Adam White";
+let row_5_data_3 = document.createElement('td');
+row_5_data_3.innerHTML = "Microsoft";
+let row_5_data_4 = document.createElement('td');
+row_5_data_4.innerHTML = "Microsoft";
+
+row_5.appendChild(row_5_data_1);
+row_5.appendChild(row_5_data_2);
+row_5.appendChild(row_5_data_3);
+row_5.appendChild(row_5_data_4);
+
+tbody.appendChild(row_5);
+
+
+
+let row_6 = document.createElement('tr');
+let row_6_data_1 = document.createElement('td');
+row_6_data_1.innerHTML = "Total";
+let row_6_data_2 = document.createElement('td');
+row_6_data_2.innerHTML = "Adam White";
+let row_6_data_3 = document.createElement('td');
+row_6_data_3.innerHTML = "Microsoft";
+let row_6_data_4 = document.createElement('td');
+row_6_data_4.innerHTML = "Microsoft";
+
+row_6.appendChild(row_6_data_1);
+row_6.appendChild(row_6_data_2);
+row_6.appendChild(row_6_data_3);
+row_6.appendChild(row_6_data_4);
+
+tbody.appendChild(row_6);

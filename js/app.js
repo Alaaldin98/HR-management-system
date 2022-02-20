@@ -88,6 +88,32 @@ console.log(allname);
 //     if (this.level === "Mid-Senior") { salary = randomRange(1000,1500);} ;
 //     if (this.level === "Senior") {salary = randomRange(1500,2000);};
 // };
+function savedata () {
+let jsave = JSON.stringify (allname);
+localStorage.setItem("data" , jsave)
+};
+
+function getData(){
+    let nams = localStorage.getItem("data");
+    let parsnams = JSON.parse(nams);
+    // for (let i = 0; i < parsnams.length; i++) {
+    // allname = parsnams 
+    // allname ();
+    console.log(parsnams);
+
+    if(parsnams != null){
+          allname = [];
+        
+            for(let i = 0; i < parsnams.length; i++){
+                        
+                   new names(parsnams[i].employee, parsnams[i].fullname, parsnams[i].department, parsnams[i].level, parsnams[i].imageurl);
+              };
+              
+              }
+    renderAll();
+console.log(parsnams);
+}
+
 names.prototype.salarylevel = function() {
     var max ;
     var min ;
@@ -131,7 +157,8 @@ function handelSubmit(event){
     newname.salarylevel()   
     console.log(newname.salary); 
     newname.render();
-    form.reset();
+    // form.reset();
+    savedata();
 }
 
 
@@ -144,6 +171,6 @@ function renderAll(){
         allname[i].render();
         
     }
-
+// savedata();
 };
-renderAll();
+getData();
