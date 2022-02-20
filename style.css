@@ -3,7 +3,7 @@ header {
     align-items: center;
     height: 80px;
     justify-content: space-between;
-    background-color: #007928;
+    background-color: #929000;
   }
   
   header nav a {
@@ -19,7 +19,7 @@ header {
     color: #ff0000;
   }
   body {
-    width: 960px;
+    width: 1000px;
     margin: auto;
     font-family: 'Roboto', sans-serif;
     line-height: 1.5;
@@ -68,9 +68,6 @@ header {
   }
   
   /* Add some padding inside the card container */
-  . {
-    padding: 2px 16px;
-  }
   .container {
     padding: 2px 16px;
   }
