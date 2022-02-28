@@ -1,4 +1,3 @@
-
 let allname = [];
 let namesdiv = document.getElementById("namesdiv"); 
 
